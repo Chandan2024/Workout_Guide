@@ -1,0 +1,482 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.tailgrids.com/tailgrids-fallback.css" />
+  <link rel="stylesheet" href="./style.css">
+  <title>Fit-Bit</title>
+  <link rel="icon" href="./images/Bicep_Logo.png">
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+  <div
+    class="w-full text-gray-700 sticky top-0 bg-gradient-to-r from-indigo-400 via-purple-300 to-pink-300 text-black dark-mode:text-gray-200 dark-mode:bg-gray-800">
+    <div x-data="{ open: false }"
+      class="flex flex-col max-w-screen-xl px-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
+      <div class="p-4 flex flex-row items-center justify-between">
+        <div class="mb-6 md:mb-0">
+          <a href="./index.html" target="_self" class="flex items-center">
+            <img src="./images/Bicep_Logo.png" class="mr-4 h-10" alt="">
+            <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-black">Fit-Bit</span>
+          </a>
+        </div>
+        <button class="md:hidden rounded-lg focus:outline-none focus:shadow-outline" @click="open = !open">
+          <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
+            <path x-show="!open" fill-rule="evenodd"
+              d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z"
+              clip-rule="evenodd"></path>
+            <path x-show="open" fill-rule="evenodd"
+              d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+              clip-rule="evenodd"></path>
+          </svg>
+        </button>
+      </div>
+      <nav :class="{'flex': open, 'hidden': !open}"
+        class="flex-col flex-grow pb-4 md:pb-0 hidden md:flex md:justify-end md:flex-row">
+
+        <a class="px-4 py-2 mt-3 text-lg font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-primary dark-mode:hover:text-primary dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+          href="./Workout.html">Workout</a>
+        <a class="px-4 py-2 mt-3 text-lg font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-primary dark-mode:hover:text-primary dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+          href="./Meditation.html">Meditation</a>
+        <a class="px-4 py-2 mt-3 text-lg font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-primary dark-mode:hover:text-primary dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+          href="./Diet.html">Diet</a>
+        <a class="px-4 py-2 mt-3 text-lg font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-primary dark-mode:hover:text-primary dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+          href="./Tips.html">Tips</a>
+        <a class="px-4 py-2 mt-3 text-lg font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-primary dark-mode:hover:text-primary dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+          href="https://d-coder-chandan.netlify.app/?">About</a>
+
+        </button>
+    </div>
+    </nav>
+  </div>
+  </div>
+  </nav>
+  </div>
+  </div>
+<!-- navbar complete -->
+
+  <!-- slider -->
+  <script defer src="https://unpkg.com/alpinejs@3.2.3/dist/cdn.min.js"></script>
+  <article x-data="slider" class="relative w-full flex flex-shrink-0 overflow-hidden mt-1">
+    <div class="rounded-full bg-gray-600 text-white absolute top-5 right-5 text-sm px-2 text-center z-10">
+      <span x-text="currentIndex"></span>/
+      <span x-text="images.length"></span>
+    </div>
+
+    <template x-for="(image, index) in images">
+      <figure class="h-96" x-show="currentIndex == index + 1" x-transition:enter="transition transform duration-300"
+        x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100"
+        x-transition:leave="transition transform duration-300" x-transition:leave-start="opacity-100"
+        x-transition:leave-end="opacity-0">
+        <img :src="image" alt="Image" class="absolute inset-0 z-10 h-full w-full object-cover opacity-70" />
+        <figcaption
+          class="absolute inset-x-0 bottom-1 z-20 w-96 mx-auto p-4 font-semibold text-md text-center tracking-widest leading-snug bg-gradient-to-r from-indigo-200 via-purple-100 to-pink-200 bg-opacity-25">
+          “Self-control is the Mantra of Success”. <br>– Bhagavad Gita</figcaption>
+      </figure>
+    </template>
+
+    <button @click="back()"
+      class="absolute left-14 top-1/2 -translate-y-1/2 w-11 h-11 flex justify-center items-center rounded-full shadow-md z-10 bg-gray-100 hover:bg-gray-200">
+      <svg
+        class=" w-8 h-8 font-bold transition duration-500 ease-in-out transform motion-reduce:transform-none text-gray-500 hover:text-gray-600 hover:-translate-x-0.5"
+        fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7">
+        </path>
+      </svg>
+    </button>
+
+    <button @click="next()"
+      class="absolute right-14 top-1/2 translate-y-1/2 w-11 h-11 flex justify-center items-center rounded-full shadow-md z-10 bg-gray-100 hover:bg-gray-200">
+      <svg
+        class=" w-8 h-8 font-bold transition duration-500 ease-in-out transform motion-reduce:transform-none text-gray-500 hover:text-gray-600 hover:translate-x-0.5"
+        fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path>
+      </svg>
+    </button>
+  </article>
+
+  <script>
+    document.addEventListener('alpine:init', () => {
+      Alpine.data('slider', () => ({
+        currentIndex: 1,
+        images: [
+          'https://source.unsplash.com/1280x566/?muscle',
+          'https://source.unsplash.com/1280x566/?fruits',
+          'https://source.unsplash.com/1280x566/?herbal',
+          'https://source.unsplash.com/1280x566/?hindugod',
+          'https://source.unsplash.com/1280x566/?buddha'
+        ],
+        back() {
+          if (this.currentIndex > 1) {
+            this.currentIndex = this.currentIndex - 1;
+          }
+        },
+        next() {
+          if (this.currentIndex < this.images.length) {
+            this.currentIndex = this.currentIndex + 1;
+          } else if (this.currentIndex <= this.images.length) {
+            this.currentIndex = this.images.length - this.currentIndex + 1
+          }
+        },
+      }))
+    })
+  </script>
+<!-- slider done -->
+
+<!-- heading line -->
+  <div role="alert">
+    <div
+      class="bg-gray-300 text-black font-semi-bold text-lg rounded-t px-4 py-2 mt-1">
+      " Fit-Bit "Nourish Your Body, Transform Your Life ! "
+    </div>
+    <div
+      class="border border-t-0 text-lg border-red-400 rounded-b bg-gray-300 px-4 py-3 text-black">
+      <p>We provide a simple guide for balanced diet, effective workouts, and meditation techniques.</p>
+    </div>
+  </div>
+
+  <!-- Cards Start -->
+  <section class="pt-20 bg-gray-300 lg:pt-[120px] pb-10 lg:pb-20 mt-1">
+    <div class="container ">
+      <div class="flex flex-wrap -mx-4">
+        <div class="w-full md:w-1/2 xl:w-1/3 px-4">
+          <div class="bg-gray-100 rounded-lg overflow-hidden mb-10">
+            <img src="./images/Exercise_Card.png" alt="image" class="w-80 h-80 m-lg-auto" />
+            <div class="p-8 sm:p-9 md:p-7 xl:p-9 text-center">
+              <h3>
+                <a href="./Workout.html" class="
+                        font-semibold
+                        text-dark text-xl
+                        sm:text-[22px]
+                        md:text-xl
+                        lg:text-[22px]
+                        xl:text-xl
+                        2xl:text-[22px]
+                        mb-4
+                        block
+                        hover:text-primary
+                        ">
+                  Workout Guide
+                </a>
+              </h3>
+              <p class="text-base text-semibold leading-relaxed mb-7">
+                Your Comprehensive Workout Guide: Achieve your fitness goals with expertly crafted exercises, routines,
+                and tips for optimal results.
+              </p>
+              <a href="./Workout.html" class="
+              inline-block
+              py-2
+              px-7
+              border border-black
+              rounded-full
+              text-semibold 
+              font-medium
+              hover:border-primary hover:bg-primary hover:text-white
+              transition
+                     ">
+                View Details
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="w-full md:w-1/2 xl:w-1/3 px-4">
+          <div class="bg-gray-100 rounded-lg overflow-hidden mb-10">
+            <img src="./images/Meditation_Card.png" alt="image" class="w-80 h-80 m-lg-auto" />
+            <div class="p-8 sm:p-9 md:p-7 xl:p-9 text-center">
+              <h3>
+                <a href="./Meditation.html" class="
+                        font-semibold
+                        text-dark text-xl
+                        sm:text-[22px]
+                        md:text-xl
+                        lg:text-[22px]
+                        xl:text-xl
+                        2xl:text-[22px]
+                        mb-4
+                        block
+                        hover:text-primary
+                        ">
+                  Meditation Guide
+                </a>
+              </h3>
+              <p class="text-base text-semibold leading-relaxed mb-7">
+                Discover Inner Peace :<br>Our Meditation Guide offers techniques and insights to cultivate mindfulness
+                and serenity in daily life.
+              </p>
+              <a href="./Meditation.html" class="
+                     inline-block
+                     py-2
+                     px-7
+                     border border-black
+                     rounded-full
+                     text-semibold 
+                     font-medium
+                     hover:border-primary hover:bg-primary hover:text-white
+                     transition
+                     ">
+                View Details
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="w-full md:w-1/2 xl:w-1/3 px-4">
+          <div class="bg-gray-100 rounded-lg overflow-hidden mb-10">
+            <img src="./images/Diet_Card.png" alt="image" class="w-80 h-80 m-lg-auto" />
+            <div class="p-8 sm:p-9 md:p-7 xl:p-9 text-center">
+              <h3>
+                <a href="./Diet.html" class="
+                        font-semibold
+                        text-dark text-xl
+                        sm:text-[22px]
+                        md:text-xl
+                        lg:text-[22px]
+                        xl:text-xl
+                        2xl:text-[22px]
+                        mb-4
+                        block
+                        hover:text-primary
+                        ">
+                  Diet Guide
+                </a>
+              </h3>
+              <p class="text-base text-semibold leading-relaxed mb-7">
+                Nourish Your Body :<br>Unlock the secrets to a balanced and healthy diet with our comprehensive guide to
+                optimal nutrition.
+              </p>
+              <a href="./Diet.html" class="
+              inline-block
+              py-2
+              px-7
+              border border-black
+              rounded-full
+              text-semibold 
+              font-medium
+              hover:border-primary hover:bg-primary hover:text-white
+              transition
+                     ">
+                View Details
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ====== Cards done -->
+
+  <!-- collapse 1-->
+
+  <details class="bg-gray-300 open:bg-gradient-to-r from-indigo-400 via-purple-300 to-pink-300 duration-300 mt-1">
+    <summary class="bg-inherit px-5 py-3 text-lg text-semibold cursor-pointer">Why Workout is Important ?</summary>
+    <div class="bg-white px-5 py-3 border border-gray-300 text-md">
+      <h3>Workout and exercise are crucial for maintaining optimal physical and mental health.<br>
+        They improve cardiovascular health, boost muscle strength, enhance flexibility, and aid in weight
+        management.<br>
+        Regular physical activity also reduces stress, promotes better sleep, and increases overall energy levels,
+        contributing to a happier and healthier life.</h3>
+    </div>
+  </details>
+
+  <!-- collapse 1-->
+  <details class="bg-gray-300 open:bg-gradient-to-r from-indigo-400 via-purple-300 to-pink-300 duration-300">
+    <summary class="bg-inherit px-5 py-3 text-lg text-semibold cursor-pointer">Benefits of Meditation</summary>
+    <div class="bg-white px-5 py-3 border border-gray-300 text-md">
+      <h3>Meditation offers a multitude of benefits for both the mind and body.<br>
+        It reduces stress, anxiety, and improves focus and mental clarity. Regular practice enhances emotional
+        well-being,<br>
+        promotes better sleep, boosts creativity, and cultivates a sense of inner peace and mindfulness, leading to an
+        overall
+        improved quality of life.</h3>
+    </div>
+  </details>
+
+  <!-- collapse 3 -->
+  <details class="bg-gray-300 open:bg-gradient-to-r from-indigo-400 via-purple-300 to-pink-300 duration-300">
+    <summary class="bg-inherit px-5 py-3 text-lg text-semibold cursor-pointer">Proper Diet</summary>
+    <div class="bg-white px-5 py-3 border border-gray-300 text-md">
+      <h3>Maintaining a healthy lifestyle involves a balanced diet that provides essential nutrients for the body's
+        proper functioning.<br>
+        While individual needs may vary, here are some general guidelines for macronutrient distribution:<br><br>
+
+        <h2> 1. Protein: </h2> is essential for muscle repair and growth. Aim for about 15-25% of your total daily
+        calorie intake from protein sources like lean meats, fish, poultry, eggs, dairy, legumes, and plant-based
+        proteins.<br><br>
+
+        <h2>2. Carbohydrates:</h2> Carbs are the body's primary source of energy. Consume about 45-65% of your daily
+        calories from complex carbohydrates found in whole grains, fruits, vegetables, and legumes. Limit refined and
+        sugary carbs.<br><br>
+
+        <h2>3. Fats:</h2> Healthy fats are important for hormone regulation and overall health. Aim for 20-35% of daily
+        calories from sources like avocados, nuts, seeds, olive oil, and fatty fish.<br><br>
+
+        <h2>4. Fiber: </h2>Incorporate ample dietary fiber from fruits, vegetables, whole grains, and legumes to aid
+        digestion and support heart health.<br><br>
+
+        <h2>5. Vitamins and Minerals:</h2> Consume a variety of colorful fruits and vegetables to obtain a wide range of
+        vitamins and minerals.<br><br>
+
+        <h2> 6. Water : </h2>Stay well-hydrated by drinking enough water throughout the day. The general recommendation
+        is about 8 cups (2 liters) daily, but individual needs may vary.<br><br>
+
+        <h2>7. Sugars and Sodium: </h2>Limit added sugars and sodium in processed foods to promote heart health.<br><br>
+
+        <h2> 8. Portion Control: </h2>Be mindful of portion sizes to prevent overeating and unnecessary calorie
+        intake.<br><br>
+
+        <h2> 9. Meal Balance: </h2>Aim for balanced meals that include a combination of protein, carbohydrates, healthy
+        fats, and vegetables.<br><br>
+
+        <h2>10.Nutrient Timing: </h2>Consider timing meals and snacks around workouts to support energy levels and
+        recovery.<br><br>
+
+        Remember, dietary needs can vary based on age, gender, activity level, and health conditions.<br>
+        It's advisable to consult with a registered dietitian or healthcare professional to create a personalized and
+        sustainable diet plan that meets your specific needs and health goals.
+      </h3>
+    </div>
+  </details>
+  </div>
+
+  <!-- Footer -->
+  <footer class="text-center text-lg-start text-semibold mt-2">
+    <!-- Section: Social media -->
+    <section class="d-flex bg-gradient-to-r from-indigo-400 via-purple-300 to-pink-300 mt-1 justify-content-center justify-content-lg-between p-4 border-bottom">
+      <!-- Left -->
+      <div class="me-5 d-none d-lg-block">
+        <span >Get connected with us on social networks:</span>
+      </div>
+      <!-- Left -->
+
+      <!-- Right -->
+      <div>
+        <a href="" class="me-4 text-reset">
+          <i class="fa-brands fa-facebook-f"></i>
+        </a>
+        <a href="https://twitter.com/iChandanW03?t=k5jwjAxmjU51jb1eZRCcog&s=09" target="_blank" class="me-4 text-reset">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="" class="me-4 text-reset">
+          <i class="fab fa-google"></i>
+        </a>
+        <a href="" class="me-4 text-reset">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/chandan-werulkar-cbw2024/" target="_blank" class="me-4 text-reset">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://github.com/Chandan2024" target="_blank" class="me-4 text-reset">
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+    </section>
+    <!-- Section: Social media -->
+
+    <!-- Section: Links  -->
+    <section class="bg-gradient-to-r from-indigo-400 via-purple-300 to-pink-300">
+      <div class="container text-center text-md-start">
+        <!-- Grid row -->
+        <div class="row ">
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mt-2 mb-4">
+            <!-- Content -->
+            <div class="mb-auto md:mb-0 ">
+              <a href="./index.html" target="_self" class="flex items-center">
+                <img src="./images/Bicep_Logo.png" class="mr-4 h-10" alt="FlowBite Logo">
+                <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-black">Fit-Bit</span>
+              </a>
+            </div>
+            <p class="mt-4">
+              Empowering Your Journey to Fitness: Explore exercises, yoga, and diet tips for a healthier, stronger, and
+              balanced lifestyle.
+            </p>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4 mt-4">
+              Products
+            </h6>
+            <p>
+              <a href="https://www.flipkart.com/search?q=exercise+equipment&sid=qoc%2Camf%2Cvh3&as=on&as-show=on&otracker=AS_QueryStore_OrganicAutoSuggest_1_8_sc_na_na&otracker1=AS_QueryStore_OrganicAutoSuggest_1_8_sc_na_na&as-pos=1&as-type=RECENT&suggestionId=exercise+equipment%7CFitness+Kits&requestId=d71eb6dc-8cc9-42e5-ba28-5ba5a8fae71d&as-backfill=on"
+               target="_blank" class="text-reset">Exercise</a>
+            </p>
+            <p>
+              <a href="https://www.flipkart.com/search?q=yoga%20equipment&otracker=search&otracker1=search&marketplace=FLIPKART&as-show=on&as=off" 
+              target="_blank" class="text-reset">Yoga</a>
+            </p>
+            <p>
+              <a href="https://www.flipkart.com/search?q=diet+food&sid=eat%2Cymr&as=on&as-show=on&otracker=AS_QueryStore_OrganicAutoSuggest_1_4_na_na_na&otracker1=AS_QueryStore_OrganicAutoSuggest_1_4_na_na_na&as-pos=1&as-type=RECENT&suggestionId=diet+food%7CFood+Combo&requestId=6bb4b2c8-87a3-480d-ae9c-6b1154afe801&as-backfill=on" 
+              target="_blank" class="text-reset">Diet</a>
+            </p>
+            <p>
+              <a href="https://www.flipkart.com/search?q=meditation&otracker=search&otracker1=search&marketplace=FLIPKART&as-show=on&as=off" 
+              target="_blank" class="text-reset">Meditation</a>
+            </p>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-1">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4 mt-4">
+              Useful links
+            </h6>
+            <p>
+              <a href="#!" class="text-reset">Blogs</a>
+            </p>
+            <p>
+              <a href="https://www.youtube.com/channel/UCGzA9slDu23_Z2CyL7rrahQ"  target="_blank" class="text-reset">Channel</a>
+            </p>
+            <p>
+              <a href="#!" class="text-reset">Order</a>
+            </p>
+            <p>
+              <a href="mailto:chandanwerulkar@gmail.com" class="text-reset">Donate</a>
+            </p>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4 mt-4">Contact</h6>
+            <p><i class="fas fa-home me-3"></i>Amravati Maharashta India</p>
+            <p>
+              <i class="fas fa-envelope me-3"></i>
+              abw.chandan03@gmail.com
+            </p>
+            <p><i class="fas fa-phone me-3"></i>+91 9689879283</p>
+            <p><i class="fa-solid fa-globe me-3"></i><a href="https://d-coder-chandan.netlify.app/?" target="_blank" >D-Coder.com</a></p>
+          </div>
+          <!-- Grid column -->
+        </div>
+        <!-- Grid row -->
+      </div>
+    </section>
+    <!-- Section: Links  -->
+
+    <!-- Copyright -->
+    <div class="text-center p-4 bg-gradient-to-r from-indigo-400 via-purple-300 to-pink-300">
+      © 2023 Copyright:
+      <a class="text-reset fw-bold bg-white-300" href="#">Fit-Bit.com</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+  <!-- Footer -->
+
+
+  <script src="https://kit.fontawesome.com/7ec85cccde.js" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
